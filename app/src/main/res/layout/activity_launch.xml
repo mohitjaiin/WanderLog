@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- VideoView for background -->
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="2000dp"
+        android:layout_height="2000dp"
+        android:layout_centerInParent="true"
+        tools:layout_centerInParent="true" />
+
+    <!-- Centralized CardView -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:padding="16dp">
+
+
+
+        <!-- Register Button -->
+
+        <!-- Text: Already a user? Login -->
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        app:srcCompat="@drawable/wanderloglaunch" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="30dp"
+
+        android:layout_marginTop="346dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="8dp"
+
+        android:backgroundTint="#00695C"
+        android:includeFontPadding="false"
+        android:paddingStart="24dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="12dp"
+        android:radius="8dp"
+        android:text="Register"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/textLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnRegister"
+        android:layout_alignStart="@+id/btnRegister"
+
+        android:layout_alignEnd="@+id/btnRegister"
+
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="0dp"
+        android:text="Already a user? Login"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+</RelativeLayout>

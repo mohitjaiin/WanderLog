@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/text_view_trip_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/teal_200"
+        android:textSize="18sp"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/text_view_trip_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/teal_200"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/text_view_trip_budget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+    <Button
+        android:id="@+id/btn_view_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Details"/>
+
+</LinearLayout>
