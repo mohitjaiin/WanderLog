@@ -20,6 +20,9 @@
             android:name=".TripMainActivity"
             android:exported="true" />
         <activity
+            android:name=".AddTripActivity"
+            android:exported="true" />
+        <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/SplashScreen">
@@ -32,6 +35,7 @@
 
         <activity
             android:name=".LaunchActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="true"/>
 
 
@@ -43,6 +47,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="true">
 
         </activity>

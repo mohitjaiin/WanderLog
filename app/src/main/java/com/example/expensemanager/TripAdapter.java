@@ -1,5 +1,6 @@
 package com.example.expensemanager;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
+
+
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
@@ -74,5 +77,7 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
     public int getItemCount() {
         return trips.size();
     }
+
+
 }
 

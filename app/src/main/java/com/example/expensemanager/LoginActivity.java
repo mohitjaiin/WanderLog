@@ -13,35 +13,32 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private VideoView videoView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         // Find the VideoView
-        VideoView videoView = findViewById(R.id.videoView);
+        videoView = findViewById(R.id.videoView);
 
         // Set the video Uri (replace video_uri with your video file path)
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.launchsand);
         videoView.setVideoURI(uri);
-
-        // Create MediaController
-        MediaController mediaController = new MediaController(this);
-        mediaController.setAnchorView(videoView);
-
-        // Set MediaController to VideoView
-        videoView.setMediaController(mediaController);
 
         // Enable looping
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
                 mediaPlayer.setLooping(true);
+                // Start playing the video
+                videoView.start();
+                // Adjust video dimensions to fit the screen
+                adjustVideoDimensions(mediaPlayer);
             }
         });
 
-        // Start playing the video
-        videoView.start();
 
 
 
@@ -56,5 +53,21 @@ public class LoginActivity extends AppCompatActivity {
                 finish(); // Finish the LaunchActivity
             }
         });
+
+
+    }
+    private void adjustVideoDimensions(MediaPlayer mediaPlayer) {
+        float videoProportion = mediaPlayer.getVideoWidth() / (float) mediaPlayer.getVideoHeight();
+        float screenProportion = getResources().getDisplayMetrics().widthPixels / (float) getResources().getDisplayMetrics().heightPixels;
+        android.view.ViewGroup.LayoutParams lp = videoView.getLayoutParams();
+        if (videoProportion > screenProportion) {
+            lp.width = getResources().getDisplayMetrics().widthPixels;
+            lp.height = (int) (getResources().getDisplayMetrics().widthPixels / videoProportion);
+        } else {
+            lp.width = (int) (getResources().getDisplayMetrics().heightPixels * videoProportion);
+            lp.height = getResources().getDisplayMetrics().heightPixels;
+        }
+        videoView.setLayoutParams(lp);
     }
 }
+

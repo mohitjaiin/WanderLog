@@ -1,5 +1,6 @@
 package com.example.expensemanager;
 
+import android.app.Activity;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,7 +12,11 @@ import android.widget.Button;
 import android.content.Intent;
 import java.util.ArrayList;
 
+import javax.annotation.Nullable;
+
 public class MyTripsFragment extends Fragment {
+
+    private static final int ADD_TRIP_REQUEST_CODE = 1;
 
     private RecyclerView recyclerView;
     private TripAdapter tripAdapter;
@@ -25,21 +30,19 @@ public class MyTripsFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view_trips);
         btnAddTrip = view.findViewById(R.id.btn_add_trip);
 
+        // Initialize your RecyclerView and Adapter
         trips = new ArrayList<>();
-        // Initialize your trips data here
-        trips.add(new Trip("Trip 1", "Location 1", 1000));
-        trips.add(new Trip("Trip 2", "Location 2", 1500));
-        trips.add(new Trip("Trip 3", "Location 3", 1200));
-
         tripAdapter = new TripAdapter(trips);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(tripAdapter);
 
+        // Set OnClickListener for the "Add Trip" button
         btnAddTrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle add trip button click
-                // Here you can start an activity to add a new trip or perform any other action
+                // Launch AddTripActivity to add a new trip
+                Intent intent = new Intent(getActivity(), AddTripActivity.class);
+                startActivityForResult(intent, ADD_TRIP_REQUEST_CODE);
             }
         });
 
@@ -57,4 +60,19 @@ public class MyTripsFragment extends Fragment {
 
         return view;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == ADD_TRIP_REQUEST_CODE && resultCode == Activity.RESULT_OK && data != null) {
+            // Retrieve trip details from AddTripActivity result and add to the list
+            Trip newTrip = (Trip) data.getSerializableExtra("new_trip");
+            if (newTrip != null) {
+                trips.add(newTrip);
+                tripAdapter.notifyItemInserted(trips.size() - 1); // Notify adapter of data set change
+            }
+        }
+    }
 }
+
+
