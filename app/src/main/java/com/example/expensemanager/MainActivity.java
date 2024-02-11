@@ -28,7 +28,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements OnItemsCLick{
     ActivityMainBinding binding;
     private ExpensesAdapter expensesAdapter;
-//    Intent intent;
+    //    Intent intent;
     private long income=0,expense=0;
 
     @Override

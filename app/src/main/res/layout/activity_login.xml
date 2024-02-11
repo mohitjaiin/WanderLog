@@ -14,69 +14,76 @@
     <VideoView
         android:id="@+id/videoView"
         android:layout_width="1000dp"
-        android:layout_height="1000dp
-"
+        android:layout_height="2000dp"
+
         android:layout_centerInParent="true" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_margin="100dp"
+        android:layout_margin="80dp"
         android:layout_gravity="center"
-        android:background="@color/black"
+
         app:cardCornerRadius="30dp"
-        app:cardBackgroundColor="@android:color/transparent"
+        app:cardBackgroundColor="#A5A6A6"
         >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:padding="24dp"
-            android:background="@drawable/custom_edittext">
+            android:background="@drawable/custom_edittext"
+            android:orientation="vertical"
+            android:padding="24dp">
+
             <TextView
+                android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Login"
-                android:id="@+id/loginText"
-                android:textSize="36sp"
                 android:textAlignment="center"
-                android:textStyle="bold"
-                android:textColor="@color/teal_700"/>
+                android:textColor="@color/teal_700"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
                 android:id="@+id/username"
-                android:background="@drawable/custom_edittext"
-                android:layout_marginTop="40dp"
-                android:padding="8dp"
-                android:hint="Username"
-                android:textColorHint="@color/white"
-                android:drawableLeft="@drawable/baseline_person_24"
-                android:textColor="@color/white"
-                android:drawablePadding="8dp"/>
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/password"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawablePadding="8dp"
+                android:hint="Username"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/baseline_lock_24"
+                android:drawablePadding="8dp"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:hint="Password"
-                android:textColorHint="@color/white"
-                android:drawableLeft="@drawable/baseline_lock_24"
                 android:textColor="@color/white"
-                android:drawablePadding="8dp"/>
+                android:textColorHint="@color/white" />
+
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="Login"
                 android:id="@+id/loginButton"
-                android:textSize="18sp"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#00BCD4"
-                app:cornerRadius = "20dp"/>
+                android:backgroundTint="#009688"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

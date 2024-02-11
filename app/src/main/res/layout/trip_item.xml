@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/item_border">
 
     <TextView
         android:id="@+id/text_view_trip_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/teal_700"
         android:textSize="18sp"
         android:layout_marginBottom="4dp"/>
 
     <TextView
         android:id="@+id/text_view_trip_location"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/teal_700"
+        android:layout_below="@id/text_view_trip_name"
         android:layout_marginBottom="4dp"/>
 
     <TextView
         android:id="@+id/text_view_trip_budget"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
+        android:textColor="@color/teal_700"
+        android:layout_below="@id/text_view_trip_location"
         android:layout_marginBottom="4dp"/>
 
     <Button
         android:id="@+id/btn_view_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Details"/>
+        android:text="View Details"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/text_view_trip_budget"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"/>
 
-</LinearLayout>
+</RelativeLayout>

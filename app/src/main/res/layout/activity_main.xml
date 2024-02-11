@@ -23,6 +23,7 @@
                 android:id="@+id/pieChart"
                 android:background="@color/teal_700"
 
+
                 android:layout_height="match_parent"/>
         </androidx.cardview.widget.CardView>
 
