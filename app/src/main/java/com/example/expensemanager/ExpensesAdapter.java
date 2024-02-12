@@ -67,7 +67,7 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.MyView
             note=itemView.findViewById(R.id.note);
             category=itemView.findViewById(R.id.category);
             amount=itemView.findViewById(R.id.amount);
-            date=itemView.findViewById(R.id.date);
+
         }
     }
 }

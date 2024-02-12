@@ -3,18 +3,19 @@ package com.example.expensemanager;
 import java.io.Serializable;
 
 public class Trip implements Serializable {
+    private int id;
     private String name;
     private String location;
-    private double budget;
+
 
 
     public Trip(){ }
 
 
-    public Trip(String name, String location, double budget) {
+    public Trip(String name, String location) {
         this.name = name;
         this.location = location;
-        this.budget = budget;
+
     }
 
 
@@ -34,13 +35,10 @@ public class Trip implements Serializable {
         this.location = location;
     }
 
-    public double getBudget() {
-        return budget;
+
+
+
+    public int getId() {
+        return id;
     }
-
-    public void setBudget(double budget) {
-        this.budget = budget;
-    }
-
-
 }

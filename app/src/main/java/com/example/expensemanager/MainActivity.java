@@ -58,6 +58,15 @@ public class MainActivity extends AppCompatActivity implements OnItemsCLick{
                 startActivity(intent);
             }
         });
+
+        // Adding OnClickListener for Add Bills TextView
+        binding.addBills.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CameraMainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -44,7 +44,7 @@ public class LaunchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Redirect to MainActivity
-                Intent intent = new Intent(LaunchActivity.this, TripMainActivity.class);
+                Intent intent = new Intent(LaunchActivity.this, RegisterActivity.class);
                 startActivity(intent);
                 finish(); // Finish the LaunchActivity
             }
@@ -56,7 +56,7 @@ public class LaunchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Redirect to LoginActivity
-                Intent intent = new Intent(LaunchActivity.this, LoginActivity.class);
+                Intent intent = new Intent(LaunchActivity.this, Login.class);
                 startActivity(intent);
                 finish(); // Finish the LaunchActivity
             }
